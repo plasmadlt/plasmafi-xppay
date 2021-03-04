@@ -1,0 +1,28 @@
+{
+  "name": "@plasmadlt/plasmafi-xppay",
+  "license": "MIT",
+  "description": "Core contracts for the xPPAY Staking protocol",
+  "files": [
+    "contracts",
+    "build"
+  ],
+  "scripts": {
+    "clean": "rimraf ./build/",
+    "copy-swap-artifacts": "ncp ./build_plasmaswap ./build/contracts",
+    "precompile": "yarn clean",
+    "compile": "truffle compile",
+    "postcompile": "yarn copy-swap-artifacts",
+    "pretest": "yarn compile",
+    "test": "truffle test"
+  },
+  "dependencies": {
+    "@openzeppelin/test-helpers": "^0.5.6",
+    "dotenv": "^8.2.0",
+    "ncp": "^2.0.0",
+    "truffle": "^5.1.41",
+    "@truffle/hdwallet-provider": "^1.1.1"
+  },
+  "devDependencies": {
+    "truffle-plugin-verify": "^0.5.4"
+  }
+}
